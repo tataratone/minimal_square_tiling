@@ -24,7 +24,7 @@ def solve(l, s):
     best = 10**9
     parent = None
 
-    # 長辺分割（長い辺を l を k と l-k に割る）
+    # 長辺分割（長い辺 l を k と l-k に割る）
     for k in range(1, l // 2 + 1):
         # 縦 >= 横 に正規化
         c1, _ = solve(max(k, s), min(k, s))
@@ -34,7 +34,7 @@ def solve(l, s):
             best = c1 + c2
             parent = ("L", k)
 
-    # 水平分割（横方向に b を k と b-k に割る）
+    # 短辺分割（短い辺 s を k と s-k に割る）
     for k in range(1, s // 2 + 1):
         # 縦 >= 横 に正規化
         c1, _ = solve(max(l, k), min(l, k))
