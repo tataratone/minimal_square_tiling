@@ -1,5 +1,5 @@
 # minimal_square_tiling
-長方形をいくつかの正方形で埋めたときの最小枚数の構成を求めます
+長方形をいくつかの正方形で埋めたときの最小枚数の構成を求める
 
 # 必要ライブラリ
 - matplotlib
@@ -87,5 +87,10 @@ $ python min_square_tiling.py 8 3
 
 ![fig](./fig/Figure_n=8_m=3.png)
 
+
+# 補足
+
+- 1000 以上の大きさの長方形についてはかなりの計算時間がかかります（計算時間 $O(\min(n, m) \cdot \max(n, m)^2 ) $ 程度）
+- また再起関数の上限に引っかかるので、`sys.setrecursionlimit()` などで設定をしてください
 
 
